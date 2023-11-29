@@ -8,7 +8,7 @@ const posts = await res.json()
 	<main>
 		<h1>Fetching from headless WP</h1>
 		{
-			posts.map((post) => (
+			posts.map((post: any) => (
 				<article>
 					<h2 set:html={post.title.rendered} />
 					<a href={`/posts/${post.slug}`} set:html={post.title.rendered}/>
