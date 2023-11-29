@@ -1,0 +1,27 @@
+---
+import Layout from '../layouts/Layout.astro';
+const res = await fetch("https://techcrunch.com/wp-json/wp/v2/posts?_fields=title,slug")
+const posts = await res.json()
+---
+
+<Layout title="Welcome to Astro.">
+	<main>
+		<h1>Fetching from headless WP</h1>
+		{
+			posts.map((post) => (
+				<article>
+					<h2 set:html={post.title.rendered} />
+					<a href={`/posts/${post.slug}`} set:html={post.title.rendered}/>
+				</article>
+			))
+		}
+	</main>
+</Layout>
+
+<style>
+	article {
+		padding: 1rem;
+		background-color: lightgray;
+		margin: 1rem;
+	}
+</style>

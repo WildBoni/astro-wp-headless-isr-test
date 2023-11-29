@@ -1,0 +1,5 @@
+{
+  "expiration": 60,
+  "group": 1,
+  "allowQuery": ["slug"]
+}

@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "routes": [
+    { "handle": "filesystem" },
+    {
+      "src": "/posts/(?<slug>[^/]+)(?:/)?",
+      "dest": "/posts/[slug]?slug=$slug"
+    }
+  ]
+}
